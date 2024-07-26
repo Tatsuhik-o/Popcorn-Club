@@ -1,5 +1,12 @@
 import { useState } from "react";
 import "./Header.css";
+import PropTypes from "prop-types";
+
+Header.propTypes = {
+  setExpand: PropTypes.func,
+  setSearchFilter: PropTypes.func,
+};
+
 function Header({ setExpand, setSearchFilter }) {
   const [searchQuery, setSearchQuery] = useState("");
   function handleSearch(e) {

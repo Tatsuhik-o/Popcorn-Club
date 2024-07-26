@@ -1,6 +1,13 @@
 import "./MovieArea.css";
 import Movie from "./Movie";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+
+MovieArea.propTypes = {
+  currentActive: PropTypes.object,
+  searchFilter: PropTypes.string,
+};
+
 function MovieArea({ currentActive, searchFilter }) {
   const [displayArray, setDisplayArray] = useState([]);
   useEffect(() => {
@@ -14,7 +21,7 @@ function MovieArea({ currentActive, searchFilter }) {
           .includes(searchFilter?.toLowerCase())
       )
     );
-  }, [searchFilter]);
+  }, [searchFilter, currentActive]);
   return (
     <div className="movie_area">
       {displayArray?.map((elem, index) => {

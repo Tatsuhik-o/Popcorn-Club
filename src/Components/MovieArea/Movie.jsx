@@ -2,6 +2,11 @@ import { useState } from "react";
 import "./Movie.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import PropTypes from "prop-types";
+
+Movie.propTypes = {
+  movie: PropTypes.object,
+};
 
 function Movie({ movie }) {
   const [onHover, setOnHover] = useState(false);

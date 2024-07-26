@@ -1,5 +1,12 @@
-import { useState } from "react";
 import "./Sidebar.css";
+import PropTypes from "prop-types";
+
+Sidebar.propTypes = {
+  setActiveTab: PropTypes.func,
+  activeTab: PropTypes.number,
+  expand: PropTypes.bool,
+};
+
 function Sidebar({ setActiveTab, activeTab, expand }) {
   const icons = [
     <i className="fa-sharp fa-solid fa-house" key={0}></i>,
